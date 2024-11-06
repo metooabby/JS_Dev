@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predicted XI Selector</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        #teamTable{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Predicted Dream Team Selector</h2>
+
+<select id="positionFilter">
+    <option value="ALL">All</option>
+    <option value="BAT">Batsman</option>
+    <option value="BOW">Bowler</option>
+    <option value="AR">All-Rounder</option>
+    <option value="WK">Wicket-Keeper</option>
+</select>
+
+<button id="filterButton">Filter Players</button>
+<button id="selectTeamButton">Select Best Team</button>
+
+<table id="teamTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Team</th>
+            <th>Position</th>
+            <th>Sel%</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody id="teamTableBody"></tbody>
+</table>
+
+<script src="Test2.js"></script>
+
+</body>
+</html>
