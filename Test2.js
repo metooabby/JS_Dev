@@ -58,36 +58,61 @@ function selectBestTeam(players) {
 
     scoredPlayers.sort((a, b) => b.score - a.score);
 
-    const highSelPlayers = scoredPlayers.filter(player => player.selPerc >= 31);
-    const lowSelPlayers = scoredPlayers.filter(player => player.selPerc < 31);
-
-    const highSelCount = Math.min(Math.ceil(highSelPlayers.length / 2), 7);
-    const lowSelCount = 11 - highSelCount;
-
-    const bestHighSelPlayers = highSelPlayers.slice(0, highSelCount);
-    const bestLowSelPlayers = lowSelPlayers.slice(0, lowSelCount);
-
-    let bestTeam = [...bestHighSelPlayers, ...bestLowSelPlayers];
-
     const positions = ['BAT', 'BOW', 'AR', 'WK'];
-    const positionLimits = { BAT: 3, BOW: 3, AR: 3, WK: 2 };
-    const finalBestTeam = [];
-    let remainingPlayers = [...bestTeam];
+    const positionLimits = { BAT: { min: 4, max: 4 }, BOW: { min: 3, max: 3 }, AR: { min: 2, max: 2 }, WK: { min: 2, max: 2 } };
+    const minTotalPlayers = positions.reduce((sum, position) => sum + positionLimits[position].min, 0);
+    const maxTotalPlayers = positions.reduce((sum, position) => sum + positionLimits[position].max, 0);
+    const highSelLimit = Math.min(Math.ceil(scoredPlayers.length / 2), 7);
 
-    positions.forEach(position => {
-        const positionPlayers = remainingPlayers.filter(player => player.position === position);
-        const topPlayers = positionPlayers.slice(0, positionLimits[position]);
-        finalBestTeam.push(...topPlayers);
-        remainingPlayers = remainingPlayers.filter(player => !topPlayers.includes(player));
+    const bestTeam = [];
+    const positionCounters = Object.fromEntries(
+        Object.keys(positionLimits).map(position => [position, 0])
+    );
+
+    // Prioritize high selection percentage players
+    const highSelPlayers = scoredPlayers.filter(player => player.selPerc >= 31);
+    const bestHighSelPlayers = highSelPlayers.slice(0, highSelLimit);
+
+    bestHighSelPlayers.forEach(player => {
+        if (positionCounters[player.position] < positionLimits[player.position].max) {
+            bestTeam.push(player);
+            positionCounters[player.position]++;
+        }
     });
 
-    const additionalPlayers = remainingPlayers.slice(0, 11 - finalBestTeam.length);
-    finalBestTeam.push(...additionalPlayers);
+    // Fill remaining positions with low selection percentage players
+    const lowSelPlayers = scoredPlayers.filter(player => player.selPerc < 31);
+    const remainingPositions = 11 - bestTeam.length;
+
+    lowSelPlayers.forEach(player => {
+        if (bestTeam.length < 11 && positionCounters[player.position] < positionLimits[player.position].max) {
+            bestTeam.push(player);
+            positionCounters[player.position]++;
+        }
+    });
+
+    // Ensure minimum position requirements are met
+    positions.forEach(position => {
+        while (positionCounters[position] < positionLimits[position].min && bestTeam.length < 11) {
+            const eligiblePlayers = lowSelPlayers.filter(p => p.position === position);
+            if (eligiblePlayers.length > 0) {
+                bestTeam.push(eligiblePlayers[0]);
+                positionCounters[position]++;
+            }
+        }
+    });
+
+    // Fill any remaining positions with top-scoring players regardless of selection percentage
+    scoredPlayers.forEach(player => {
+        if (bestTeam.length < 11 && !bestTeam.includes(player)) {
+            bestTeam.push(player);
+        }
+    });
 
     // Sort final team by score
-    finalBestTeam.sort((a, b) => b.score - a.score);
+    bestTeam.sort((a, b) => b.score - a.score);
 
-    return finalBestTeam;
+    return bestTeam;
 }
 
 // Function to display team
