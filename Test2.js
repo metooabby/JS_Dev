@@ -13,28 +13,7 @@ const weightStrikeRate = 0.1;
 
 // Player data
 const players = [
-    { name: "Ellyse Perry", team: "SYS", position: "AR", salary: 9.0, selPerc: 97.21, fantasyPoints: 661, value: 14.69, nos: 5, runs: 268, century: 0, halfCentury: 3, wkts: 9, ct: 2, st: 0, economy: 7.75, strikeRate: 166.46 },
-    { name: "Chloe Tryon", team: "HBT", position: "AR", salary: 8.0, selPerc: 59.14, fantasyPoints: 149, value: 3.73, nos: 5, runs: 40, century: 0, halfCentury: 0, wkts: 2, ct: 2, st: 0, economy: 5.87, strikeRate: 88.89 },
-    { name: "Nicola Carey", team: "HBT", position: "AR", salary: 8.5, selPerc: 92.99, fantasyPoints: 348, value: 8.19, nos: 5, runs: 123, century: 0, halfCentury: 1, wkts: 6, ct: 0, st: 0, economy: 7.58, strikeRate: 113.89 },
-    { name: "Sophie Ecclestone", team: "SYS", position: "BOW", salary: 9.0, selPerc: 90.52, fantasyPoints: 283, value: 6.29, nos: 5, runs: 21, century: 0, halfCentury: 0, wkts: 7, ct: 4, st: 0, economy: 8.12, strikeRate: 140.00 },
-    { name: "Ashleigh Gardner", team: "SYS", position: "AR", salary: 8.5, selPerc: 93.57, fantasyPoints: 370, value: 8.71, nos: 5, runs: 60, century: 0, halfCentury: 0, wkts: 9, ct: 1, st: 0, economy: 8.60, strikeRate: 86.96 },
-    { name: "Lauren Cheatle", team: "SYS", position: "BOW", salary: 8.0, selPerc: 70.28, fantasyPoints: 186, value: 4.65, nos: 5, runs: 2, century: 0, halfCentury: 0, wkts: 4, ct: 3, st: 0, economy: 8.50, strikeRate: 100.00 },
-    { name: "Danielle Wyatt", team: "HBT", position: "BAT", salary: 9.0, selPerc: 77.83, fantasyPoints: 137, value: 3.81, nos: 4, runs: 91, century: 0, halfCentury: 1, wkts: 0, ct: 0, st: 0, economy: 0.00, strikeRate: 149.18 },
-    { name: "Elyse Villani", team: "HBT", position: "BAT", salary: 8.0, selPerc: 39.52, fantasyPoints: 144, value: 3.60, nos: 5, runs: 100, century: 0, halfCentury: 0, wkts: 0, ct: 1, st: 0, economy: 0.00, strikeRate: 97.09 },
-    { name: "Alyssa Healy", team: "SYS", position: "WK", salary: 8.0, selPerc: 51.14, fantasyPoints: 139, value: 3.48, nos: 5, runs: 43, century: 0, halfCentury: 0, wkts: 0, ct: 3, st: 3, economy: 0.00, strikeRate: 97.73 },
-    { name: "Heather Graham", team: "HBT", position: "AR", salary: 9.0, selPerc: 95.47, fantasyPoints: 400, value: 8.89, nos: 5, runs: 98, century: 0, halfCentury: 0, wkts: 8, ct: 2, st: 0, economy: 5.67, strikeRate: 144.12 },
-    { name: "Lizelle Lee", team: "HBT", position: "WK", salary: 8.5, selPerc: 71.71, fantasyPoints: 249, value: 5.86, nos: 5, runs: 130, century: 0, halfCentury: 1, wkts: 0, ct: 1, st: 3, economy: 0.00, strikeRate: 120.37 },
-    { name: "Molly Strano", team: "HBT", position: "BOW", salary: 8.0, selPerc: 80.02, fantasyPoints: 254, value: 6.35, nos: 5, runs: 20, century: 0, halfCentury: 0, wkts: 6, ct: 5, st: 0, economy: 8.19, strikeRate: 95.24 },
-    { name: "Sarah Bryce", team: "SYS", position: "WK", salary: 7.5, selPerc: 63.69, fantasyPoints: 153, value: 6.80, nos: 3, runs: 102, century: 0, halfCentury: 1, wkts: 0, ct: 1, st: 0, economy: 0.00, strikeRate: 137.84 },
-    { name: "Lauren Smith", team: "HBT", position: "BOW", salary: 7.5, selPerc: 25.59, fantasyPoints: 86, value: 2.29, nos: 5, runs: 2, century: 0, halfCentury: 0, wkts: 2, ct: 1, st: 0, economy: 7.90, strikeRate: 66.67 },
-    { name: "Hollie Armitage", team: "SYS", position: "BAT", salary: 8.0, selPerc: 22.27, fantasyPoints: 119, value: 2.98, nos: 5, runs: 66, century: 0, halfCentury: 0, wkts: 0, ct: 1, st: 0, economy: 0.00, strikeRate: 115.79 },
-    { name: "Courtney Sippel", team: "SYS", position: "BOW", salary: 7.5, selPerc: 14.51, fantasyPoints: 133, value: 3.55, nos: 5, runs: 26, century: 0, halfCentury: 0, wkts: 3, ct: 2, st: 0, economy: 7.40, strikeRate: 57.78 },
-    { name: "Caoimhe Bray", team: "SYS", position: "BOW", salary: 6.5, selPerc: 12.71, fantasyPoints: 181, value: 5.57, nos: 5, runs: 37, century: 0, halfCentury: 0, wkts: 4, ct: 1, st: 0, economy: 9.03, strikeRate: 94.87 },
-    { name: "Zoe Cooke", team: "HBT", position: "BOW", salary: 6.0, selPerc: 11.81, fantasyPoints: 0, value: "#DIV/0!", nos: 0, runs: 0, century: 0, halfCentury: 0, wkts: 0, ct: 0, st: 0, economy: 0.00, strikeRate: 0.00 },
-    { name: "Maitlan Brown", team: "SYS", position: "AR", salary: 7.0, selPerc: 9.88, fantasyPoints: 62, value: 1.77, nos: 5, runs: 24, century: 0, halfCentury: 0, wkts: 0, ct: 2, st: 0, economy: 2.40, strikeRate: 104.35 },
-    { name: "Amy Smith", team: "HBT", position: "BAT", salary: 6.0, selPerc: 4.87, fantasyPoints: 147, value: 4.90, nos: 5, runs: 1, century: 0, halfCentury: 0, wkts: 4, ct: 0, st: 0, economy: 7.45, strikeRate: 20.00 },
-    { name: "Tabatha Saville", team: "HBT", position: "BAT", salary: 7.0, selPerc: 3.92, fantasyPoints: 85, value: 2.43, nos: 5, runs: 44, century: 0, halfCentury: 0, wkts: 0, ct: 1, st: 0, economy: 0.00, strikeRate: 110.00 },
-    { name: "Mathilda Carmichael", team: "SYS", position: "BAT", salary: 6.5, selPerc: 2.42, fantasyPoints: 151, value: 4.65, nos: 5, runs: 84, century: 0, halfCentury: 0, wkts: 0, ct: 3, st: 0, economy: 0.00, strikeRate: 121.74 },
+    
 ];
 
 // Function to calculate player score
