@@ -7,31 +7,31 @@ const weightSalary = 0.1;
 
 // Player data
 const players = [
-    {name: "Abhijith Asokan", team: "AIOC", position: "BAT", salary: 8.0, selectionPercent: 86.58, battingCI: 44.4, bowlingCI: null, overallCI: null},
-    {name: "Ahamad Kabeer", team: "AIOC", position: "BOW", salary: 7.0, selectionPercent: 65.89, battingCI: null, bowlingCI: 90.0, overallCI: null},
-    {name: "Anoop Oravanakundil", team: "AIOC", position: "AR", salary: 8.0, selectionPercent: 80.12, battingCI: null, bowlingCI: null, overallCI: 68.4},
-    {name: "Arun Geetha John", team: "AIOC", position: "AR", salary: 7.0, selectionPercent: 19.03, battingCI: null, bowlingCI: null, overallCI: 56.9},
-    {name: "Asif Shahid Mahmood", team: "GGL", position: "WK", salary: 7.0, selectionPercent: 6.67, battingCI: 39.8, bowlingCI: null, overallCI: null},
-    {name: "Bilal Kazmi", team: "AIOC", position: "BOW", salary: 6.0, selectionPercent: 7.42, battingCI: null, bowlingCI: 75.0, overallCI: null},
-    {name: "Hashim Mohammed", team: "AIOC", position: "WK", salary: 7.5, selectionPercent: 35.16, battingCI: 96.4, bowlingCI: null, overallCI: null},
-    {name: "Hassan Sarwar", team: "GGL", position: "WK", salary: 8.5, selectionPercent: 85.99, battingCI: 100.0, bowlingCI: null, overallCI: null},
-    {name: "Mohammad Jahangir", team: "GGL", position: "BAT", salary: 7.5, selectionPercent: 77.96, battingCI: 65.3, bowlingCI: null, overallCI: null},
-    {name: "Mohammad Sohel", team: "GGL", position: "BAT", salary: 5.5, selectionPercent: 14.40, battingCI: 52.4, bowlingCI: null, overallCI: null},
-    {name: "Mohammed Hisham", team: "AIOC", position: "AR", salary: 9.0, selectionPercent: 92.53, battingCI: null, bowlingCI: null, overallCI: 61.0},
-    {name: "Nichel Prakash", team: "AIOC", position: "BOW", salary: 8.5, selectionPercent: 87.78, battingCI: null, bowlingCI: 92.6, overallCI: null},
-    {name: "Rahul Murali", team: "AIOC", position: "BAT", salary: 7.0, selectionPercent: 24.90, battingCI: 0.0, bowlingCI: null, overallCI: null},
-    {name: "Riasat Ali Anwar Khan", team: "GGL", position: "AR", salary: 9.0, selectionPercent: 91.80, battingCI: null, bowlingCI: null, overallCI: 59.9},
-    {name: "Robin Plathanath", team: "AIOC", position: "BOW", salary: 6.5, selectionPercent: 11.98, battingCI: null, bowlingCI: 0.0, overallCI: null},
-    {name: "Sabuh Ghosh", team: "GGL", position: "AR", salary: 8.0, selectionPercent: 36.76, battingCI: null, bowlingCI: null, overallCI: 71.0},
-    {name: "Sajad Ahmed", team: "GGL", position: "BOW", salary: 7.5, selectionPercent: 48.24, battingCI: null, bowlingCI: 85.0, overallCI: null},
-    {name: "Sandeep Toshkhani", team: "GGL", position: "AR", salary: 7.5, selectionPercent: 15.21, battingCI: null, bowlingCI: null, overallCI: 53.7},
-    {name: "Shibu Omanakuttan", team: "AIOC", position: "AR", salary: 8.5, selectionPercent: 83.32, battingCI: null, bowlingCI: null, overallCI: 40.1},
-    {name: "Vishukant Tyagi", team: "GGL", position: "BOW", salary: 8.0, selectionPercent: 88.12, battingCI: null, bowlingCI: 86.8, overallCI: null},
-    {name: "Waqar Ali", team: "GGL", position: "BAT", salary: 6.5, selectionPercent: 19.90, battingCI: 49.5, bowlingCI: null, overallCI: null},
-    {name: "Zeeshan Ahmad", team: "GGL", position: "AR", salary: 6.0, selectionPercent: 10.33, battingCI: null, bowlingCI: null, overallCI: 0.0}
-  ];
-  
+    { name: "Naeem Khan", team: "SAF", position: "AR", salary: 6.0, selectionPercent: 15.56, battingCI: null, bowlingCI: null, overallCI: null },
+    { name: "Mohdammad Hasan", team: "SAF", position: "AR", salary: 6.0, selectionPercent: 6.97, battingCI: null, bowlingCI: null, overallCI: null },
+    { name: "Imran Nawaz", team: "SAF", position: "BAT", salary: 8.5, selectionPercent: 83.78, battingCI: 31.6, bowlingCI: null, overallCI: null },
+    { name: "Abdul Rabinsha Salam", team: "SAF", position: "BOW", salary: 8.0, selectionPercent: 87.78, battingCI: null, bowlingCI: null, overallCI: null },
+    { name: "Alim Ahmed Fahim", team: "SAF", position: "BOW", salary: 8.0, selectionPercent: 88.86, battingCI: null, bowlingCI: 85.0, overallCI: null },
+    { name: "Saidul Islam", team: "SAF", position: "BOW", salary: 7.5, selectionPercent: 20.10, battingCI: null, bowlingCI: null, overallCI: null },
+    { name: "Abdul Hanan", team: "SAF", position: "BOW", salary: 7.0, selectionPercent: 27.55, battingCI: null, bowlingCI: 55.0, overallCI: null },
+    { name: "Mohammad Abrahim", team: "SAF", position: "BOW", salary: 6.5, selectionPercent: 16.89, battingCI: null, bowlingCI: null, overallCI: null },
+    { name: "Wasim Qureshi", team: "SAF", position: "WK", salary: 7.5, selectionPercent: 71.83, battingCI: null, bowlingCI: null, overallCI: 58.6 },
+    { name: "Fahimuddin Shareef", team: "SAF", position: "WK", salary: 7.0, selectionPercent: 25.27, battingCI: null, bowlingCI: null, overallCI: 100.0 },
+    { name: "Mohdammad Faysal", team: "SAF", position: "WK", salary: 6.0, selectionPercent: 4.01, battingCI: null, bowlingCI: null, overallCI: null },
+    { name: "Abdul Razzaq", team: "SBS", position: "AR", salary: 9.0, selectionPercent: 93.93, battingCI: null, bowlingCI: null, overallCI: 88.1 },
+    { name: "Sarleedharan Nair", team: "SBS", position: "AR", salary: 9.0, selectionPercent: 86.18, battingCI: null, bowlingCI: null, overallCI: 61.8 },
+    { name: "Satinder Jeet", team: "SBS", position: "AR", salary: 8.0, selectionPercent: 57.45, battingCI: null, bowlingCI: null, overallCI: 81.6 },
+    { name: "Sukhwinder Singh", team: "SBS", position: "AR", salary: 7.0, selectionPercent: 33.47, battingCI: null, bowlingCI: null, overallCI: 61.7 },
+    { name: "Badshah Ahmad", team: "SBS", position: "BAT", salary: 8.5, selectionPercent: 82.63, battingCI: 34.2, bowlingCI: null, overallCI: null },
+    { name: "Jugraj Singh", team: "SBS", position: "BAT", salary: 8.5, selectionPercent: 69.68, battingCI: 67.2, bowlingCI: null, overallCI: null },
+    { name: "Riyaz Manaf", team: "SBS", position: "BAT", salary: 7.5, selectionPercent: 7.39, battingCI: 31.8, bowlingCI: null, overallCI: null },
+    { name: "Lakhwinder Singh", team: "SBS", position: "BAT", salary: 6.5, selectionPercent: 23.32, battingCI: 100.0, bowlingCI: null, overallCI: null },
+    { name: "Yusaf Mohammed", team: "SBS", position: "BOW", salary: 7.5, selectionPercent: 87.56, battingCI: null, bowlingCI: 75.0, overallCI: null },
+    { name: "Navpreet Singh", team: "SBS", position: "BOW", salary: 6.5, selectionPercent: 12.79, battingCI: null, bowlingCI: 35.0, overallCI: null },
+    { name: "Murugan Muthu", team: "SBS", position: "WK", salary: 7.0, selectionPercent: 8.15, battingCI: null, bowlingCI: null, overallCI: 80.0 }
+];
 
+// Function to calculate player score
 function calculatePlayerScore(player) {
     let score;
     switch (player.position) {
@@ -73,35 +73,78 @@ function filterPlayersByPosition(position, players) {
 
 // Function to select best team
 function selectBestTeam(players) {
+    // Calculate scores for each player once
     const scoredPlayers = players.map(player => ({
         ...player,
         score: calculatePlayerScore(player)
     }));
 
+    // Sort players by score once (highest first)
     scoredPlayers.sort((a, b) => b.score - a.score);
-
     const positions = ['BAT', 'BOW', 'AR', 'WK'];
-    const positionLimits = { BAT: 3, BOW: 3, AR: 4, WK: 1 };
-    const bestTeam = [];
-    const positionCounters = Object.fromEntries(
-        Object.keys(positionLimits).map(position => [position, 0])
-    );
-    const maxTeamSize = 11;
+    const positionLimits = { BAT: { min: 3, max: 4 }, BOW: { min: 3, max: 4 }, AR: { min: 2, max: 3 }, WK: { min: 1, max: 2 } };
+    const highSelLimit = Math.min(Math.ceil(scoredPlayers.length / 2), 7);
 
-    for (const player of scoredPlayers) {
-        if (bestTeam.length < maxTeamSize && !bestTeam.find(p => p.name === player.name)) {
-            if (positionCounters[player.position] < positionLimits[player.position]) {
-                bestTeam.push(player);
-                positionCounters[player.position]++;
+    const bestTeam = [];
+    const positionCounters = { BAT: 0, BOW: 0, AR: 0, WK: 0 };
+
+    // Split players into high and low selection percentage groups once
+    const highSelPlayers = scoredPlayers.filter(player => player.selectionPercent >= 31);
+    const lowSelPlayers = scoredPlayers.filter(player => player.selectionPercent < 31);
+
+    // Create a set to track selected players (to avoid duplicates)
+    const selectedPlayersSet = new Set();
+
+    // Prioritize high selection percentage players
+    const bestHighSelPlayers = highSelPlayers.slice(0, highSelLimit);
+    bestHighSelPlayers.forEach(player => {
+        if (positionCounters[player.position] < positionLimits[player.position].max) {
+            bestTeam.push(player);
+            positionCounters[player.position]++;
+            selectedPlayersSet.add(player.name); // Add player to the selected set
+        }
+    });
+
+    // Prepare the low-selection players by position
+    const lowSelByPosition = {
+        BAT: lowSelPlayers.filter(p => p.position === 'BAT'),
+        BOW: lowSelPlayers.filter(p => p.position === 'BOW'),
+        AR: lowSelPlayers.filter(p => p.position === 'AR'),
+        WK: lowSelPlayers.filter(p => p.position === 'WK')
+    };
+
+    // Fill remaining positions with low selection percentage players, ensuring position limits
+    positions.forEach(position => {
+        while (positionCounters[position] < positionLimits[position].min && bestTeam.length < 11) {
+            const eligiblePlayers = lowSelByPosition[position];
+            if (eligiblePlayers.length > 0) {
+                const player = eligiblePlayers.shift(); // Get the first player
+                if (!selectedPlayersSet.has(player.name)) {
+                    bestTeam.push(player);
+                    positionCounters[position]++;
+                    selectedPlayersSet.add(player.name); // Mark as selected
+                }
             }
         }
+    });
 
-        // Stop once the team is full
-        if (bestTeam.length === maxTeamSize) break;
+    // Fill remaining positions with top-scoring players (if any remaining positions)
+    for (let player of scoredPlayers) {
+        if (bestTeam.length < 11 && !selectedPlayersSet.has(player.name)) {
+            if (positionCounters[player.position] < positionLimits[player.position].max) {
+                bestTeam.push(player);
+                positionCounters[player.position]++;
+                selectedPlayersSet.add(player.name); // Mark as selected
+            }
+        }
     }
+
+    // Sort final team by score in descending order
+    bestTeam.sort((a, b) => b.score - a.score);
 
     return bestTeam;
 }
+
 // Function to display team
 function displayTeam(players) {
     const tableBody = document.getElementById("teamTableBody");
@@ -112,6 +155,7 @@ function displayTeam(players) {
         score: calculatePlayerScore(player)
     }));
 
+    const fragment = document.createDocumentFragment();
     scoredPlayers.forEach(player => {
         const row = document.createElement("tr");
         row.innerHTML = `
@@ -121,8 +165,9 @@ function displayTeam(players) {
               <td>${player.selectionPercent}</td>
               <td>${player.score.toFixed(2)}</td>
           `;
-        tableBody.appendChild(row);
+        fragment.appendChild(row);
     });
+    tableBody.appendChild(fragment);
 }
 
 // Function to display selected team
@@ -130,20 +175,6 @@ function displaySelectedTeam(players) {
     const bestTeam = selectBestTeam(players);
     displayTeam(bestTeam);
 }
-
-// Event listeners
-document.getElementById("filterButton").addEventListener("click", () => {
-    const positionFilter = document.getElementById("positionFilter").value;
-    const filteredPlayers = filterPlayersByPosition(positionFilter, players);
-    displayTeam(filteredPlayers);
-});
-
-document.getElementById("selectTeamButton").addEventListener("click", () => {
-    displaySelectedTeam(players);
-});
-
-// Initialize team display
-displayTeam(players);
 
 // Function to recommend captain and vice-captain from best team
 function recommendCaptainViceCaptainFromBestTeam(bestTeam) {
@@ -163,7 +194,6 @@ function recommendCaptainViceCaptainFromBestTeam(bestTeam) {
 // Function to display captain and vice-captain recommendations from best team
 function displayCaptainViceCaptainRecommendationsFromBestTeam(bestTeam) {
     const { captainRecommendations, viceCaptainRecommendations } = recommendCaptainViceCaptainFromBestTeam(bestTeam);
-
     const captainTableBody = document.getElementById("captainTableBody");
     captainTableBody.innerHTML = '';
     captainRecommendations.forEach(player => {
@@ -193,7 +223,32 @@ function displayCaptainViceCaptainRecommendationsFromBestTeam(bestTeam) {
     });
 }
 
-document.getElementById("recommendCaptainViceCaptainButton").addEventListener("click", () => {
+// Debounce function
+function debounce(func, timeout = 300) {
+    let timeoutId;
+    return (...args) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+            func.apply(this, args);
+        }, timeout);
+    };
+}
+
+// Event listeners
+document.getElementById("filterButton").addEventListener("click", debounce(() => {
+    const positionFilter = document.getElementById("positionFilter").value;
+    const filteredPlayers = filterPlayersByPosition(positionFilter, players);
+    displayTeam(filteredPlayers);
+}));
+
+document.getElementById("selectTeamButton").addEventListener("click", debounce(() => {
+    displaySelectedTeam(players);
+}));
+
+document.getElementById("recommendCaptainViceCaptainButton").addEventListener("click", debounce(() => {
     const bestTeam = selectBestTeam(players);
     displayCaptainViceCaptainRecommendationsFromBestTeam(bestTeam);
-});
+}));
+
+// Initialize team display
+displayTeam(players);
