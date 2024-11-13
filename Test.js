@@ -2,36 +2,35 @@
 const players = [
     { name: "Chamari Atapattu", team: "SYD", position: "AR", salary: 9.0, selPerc: 97.74, fantasyPoints: 419 },
     { name: "Sophie Devine", team: "PER", position: "AR", salary: 8.0, selPerc: 93.16, fantasyPoints: 165 },
-    { name: "Sammy Jo Johnson", team: "SYD", position: "AR", salary: 7.5, selPerc: 46.16, fantasyPoints: 142 },
-    { name: "Amy Edgar", team: "PER", position: "AR", salary: 7.0, selPerc: 37.29, fantasyPoints: 147 },
-    { name: "Phoebe Litchfield", team: "SYD", position: "BAT", salary: 8.5, selPerc: 86.19, fantasyPoints: 280 },
-    { name: "Georgia Voll", team: "SYD", position: "BAT", salary: 8.0, selPerc: 34.56, fantasyPoints: 212 },
-    { name: "Heather Knight", team: "SYD", position: "BAT", salary: 8.0, selPerc: 87.25, fantasyPoints: 327 },
-    { name: "Anika Learoyd", team: "SYD", position: "BAT", salary: 7.0, selPerc: 3.3, fantasyPoints: 129 },
-    { name: "Chloe Piparo", team: "PER", position: "BAT", salary: 7.0, selPerc: 7.23, fantasyPoints: 64 },
-    { name: "Mikayla Hinkley", team: "PER", position: "BAT", salary: 7.0, selPerc: 14.37, fantasyPoints: 112 },
-    { name: "Dayalan Hemalatha", team: "PER", position: "BAT", salary: 6.5, selPerc: 13.11, fantasyPoints: 69 },
-    { name: "Samantha Bates", team: "SYD", position: "BOW", salary: 9.0, selPerc: 92.15, fantasyPoints: 516 },
     { name: "Alana King", team: "PER", position: "BOW", salary: 8.5, selPerc: 94.37, fantasyPoints: 517 },
-    { name: "Shabnim Ismail", team: "SYD", position: "BOW", salary: 8.5, selPerc: 77.21, fantasyPoints: 235 },
+    { name: "Samantha Bates", team: "SYD", position: "BOW", salary: 9.0, selPerc: 92.15, fantasyPoints: 516 },
+    { name: "Sammy Jo Johnson", team: "SYD", position: "AR", salary: 7.5, selPerc: 46.16, fantasyPoints: 142 },
+    { name: "Heather Knight", team: "SYD", position: "BAT", salary: 8.0, selPerc: 87.25, fantasyPoints: 327 },
+    { name: "Phoebe Litchfield", team: "SYD", position: "BAT", salary: 8.5, selPerc: 86.19, fantasyPoints: 280 },
+    { name: "Dayalan Hemalatha", team: "PER", position: "BAT", salary: 6.5, selPerc: 13.11, fantasyPoints: 69 },
     { name: "Chloe Ainsworth", team: "PER", position: "BOW", salary: 8.0, selPerc: 82.52, fantasyPoints: 359 },
+    { name: "Shabnim Ismail", team: "SYD", position: "BOW", salary: 8.5, selPerc: 77.21, fantasyPoints: 235 },
     { name: "Hannah Darlington", team: "SYD", position: "BOW", salary: 8.0, selPerc: 60.61, fantasyPoints: 233 },
-    { name: "Ebony Hoskin", team: "PER", position: "BOW", salary: 7.5, selPerc: 9.58, fantasyPoints: 140 },
-    { name: "Lilly Mills", team: "PER", position: "BOW", salary: 7.5, selPerc: 8.05, fantasyPoints: 129 },
+    { name: "Georgia Voll", team: "SYD", position: "BAT", salary: 8.0, selPerc: 34.56, fantasyPoints: 212 },
+    { name: "Mikayla Hinkley", team: "PER", position: "BAT", salary: 7.0, selPerc: 14.37, fantasyPoints: 112 },
     { name: "Taneale Peschel", team: "SYD", position: "BOW", salary: 5.5, selPerc: 21.91, fantasyPoints: 247 },
-    { name: "Beth Mooney", team: "PER", position: "WK", salary: 8.5, selPerc: 93.67, fantasyPoints: 286 },
     { name: "Amy Jones", team: "PER", position: "WK", salary: 7.5, selPerc: 28.26, fantasyPoints: 135 },
-    { name: "Tahlia Wilson", team: "SYD", position: "WK", salary: 6.5, selPerc: 7.16, fantasyPoints: 96 }
-];
+    { name: "Ebony Hoskin", team: "PER", position: "BOW", salary: 7.5, selPerc: 9.58, fantasyPoints: 140 },
+    { name: "Beth Mooney", team: "PER", position: "WK", salary: 8.5, selPerc: 93.67, fantasyPoints: 286 },
+    { name: "Chloe Piparo", team: "PER", position: "BAT", salary: 7.0, selPerc: 7.23, fantasyPoints: 64 },
+    { name: "Tahlia Wilson", team: "SYD", position: "WK", salary: 6.5, selPerc: 7.16, fantasyPoints: 96 },
+    { name: "Anika Learoyd", team: "SYD", position: "BAT", salary: 7.0, selPerc: 3.3, fantasyPoints: 129 },
+    { name: "Amy Edgar", team: "PER", position: "AR", salary: 7.0, selPerc: 37.29, fantasyPoints: 147 },
+    { name: "Lilly Mills", team: "PER", position: "BOW", salary: 7.5, selPerc: 8.05, fantasyPoints: 129 }
+]    
 
-// Function to calculate player score (without fantasy points)
 function calculatePlayerScore(player) {
     return player.fantasyPoints;
 }
 
 function filterPlayersByPosition(positionFilter, players) {
-    if (positionFilter === "All" || !positionFilter) {
-        return players; // If 'All' is selected or no position is selected, return all players
+    if (positionFilter === "ALL" || !positionFilter) {
+        return players;
     }
     return players.filter(player => player.position === positionFilter);
 }
@@ -43,7 +42,7 @@ function selectBestTeam(players) {
         score: calculatePlayerScore(player)
     }));
 
-    // Sort players by score (high to low) initially for easy processing
+    // Sort players by score (high to low)
     scoredPlayers.sort((a, b) => b.score - a.score);
 
     const positions = ['BAT', 'BOW', 'AR', 'WK'];
@@ -62,8 +61,8 @@ function selectBestTeam(players) {
         return acc;
     }, {});
 
-    // Helper function to filter by first digit rule with highest selPercentage as a tiebreaker
-    function filterByFirstDigit(players, position) {
+    // Helper function to filter players by first digit rule and selPerc
+    function filterByFirstDigit(players) {
         const filtered = [];
 
         // Group players by the first digit of their fantasy points
@@ -74,33 +73,26 @@ function selectBestTeam(players) {
             return acc;
         }, {});
 
-        // Sort the first digits in descending order to process from highest to lowest
+        // Sort first-digit groups in descending order
         const sortedKeys = Object.keys(groupedByFirstDigit).sort((a, b) => b - a);
 
         sortedKeys.forEach(firstDigit => {
             const group = groupedByFirstDigit[firstDigit];
 
-            if (position === "BOW") {
-                // For BOW, select the bowler with the lowest selPerc (opposite to other positions)
-                const selectedPlayer = group.reduce((best, player) => 
-                    player.selPerc < best.selPerc ? player : best, group[0]);
-                filtered.push(selectedPlayer);
-            } else {
-                // For other positions, select based on highest selPercentage
-                const selectedPlayer = group.reduce((best, player) => 
-                    player.selPerc > best.selPerc ? player : best, group[0]);
-                filtered.push(selectedPlayer);
-            }
+            // If there are multiple players with the same first digit, select the one with the highest selPerc
+            const selectedPlayer = group.reduce((best, player) => 
+                player.selPerc > best.selPerc ? player : best, group[0]);
+            filtered.push(selectedPlayer);
         });
 
         return filtered;
     }
 
-    // Process each position with filtering
+    // Process each position with filtering by group and then single-digit rule
     positions.forEach(position => {
-        const positionFiltered = filterByFirstDigit(positionGroups[position], position);
+        const positionFiltered = filterByFirstDigit(positionGroups[position]);
 
-        // Fill the position with the first digit filtered players
+        // Add players from the filtered list to the team
         positionFiltered.forEach(player => {
             if (positionCounters[player.position] < positionLimits[player.position].max && !isPlayerInTeam(player)) {
                 bestTeam.push(player);
@@ -108,13 +100,13 @@ function selectBestTeam(players) {
             }
         });
 
-        // If there are still open spots, fill them with the next best players based on selPerc
+        // If there are still open spots, add the next best single-value players based on selPerc
         if (positionCounters[position] < positionLimits[position].max) {
             const remainingPlayers = positionGroups[position].filter(player => !isPlayerInTeam(player));
-            remainingPlayers.sort((a, b) => position === "BOW" ? a.selPerc - b.selPerc : b.selPerc - a.selPerc); // Sort based on lowest selPerc for bowlers
+            remainingPlayers.sort((a, b) => b.selPerc - a.selPerc); // Sort all by highest selPerc
 
             while (positionCounters[position] < positionLimits[position].max && remainingPlayers.length > 0) {
-                const playerToAdd = remainingPlayers.shift(); // Select the player with the lowest or highest selPerc
+                const playerToAdd = remainingPlayers.shift();
                 if (playerToAdd && !isPlayerInTeam(playerToAdd)) {
                     bestTeam.push(playerToAdd);
                     positionCounters[position]++;
@@ -172,17 +164,36 @@ document.getElementById("selectTeamButton").addEventListener("click", () => {
 // Initialize team display
 displayTeam(players);
 
-// Function to recommend captain and vice-captain
+// Function to recommend captain and vice-captain from the best 11 players
 function recommendCaptainViceCaptain(players) {
-    const scoredPlayers = players.map(player => ({
-        ...player,
-        score: calculatePlayerScore(player)
-    }));
-    scoredPlayers.sort((a, b) => b.score - a.score);
+    // Get the best 11 players using the selectBestTeam function
+    const best11 = selectBestTeam(players).slice(0, 11);
 
-    // Recommend top 3 players as captain and vice-captain
-    const captainRecommendations = scoredPlayers.slice(0, 3);
-    const viceCaptainRecommendations = scoredPlayers.slice(3, 6);
+    // Group players by the first digit of their fantasy points
+    const groupedByFirstDigit = best11.reduce((acc, player) => {
+        const firstDigit = player.fantasyPoints.toString()[0];
+        if (!acc[firstDigit]) acc[firstDigit] = [];
+        acc[firstDigit].push(player);
+        return acc;
+    }, {});
+
+    const captainRecommendations = [];
+    const viceCaptainRecommendations = [];
+
+    // Process each group for captain and vice-captain selections
+    Object.keys(groupedByFirstDigit).forEach(firstDigit => {
+        const group = groupedByFirstDigit[firstDigit];
+
+        if (group.length > 1) {
+            // For groups with multiple players sharing the same first digit, select the player with max fantasyPoints as captain
+            const captainCandidate = group.reduce((best, player) => 
+                player.fantasyPoints > best.fantasyPoints ? player : best, group[0]);
+            captainRecommendations.push(captainCandidate);
+        } else if (group.length === 1) {
+            // For single-player groups, recommend them as vice-captain
+            viceCaptainRecommendations.push(group[0]);
+        }
+    });
 
     return { captainRecommendations, viceCaptainRecommendations };
 }
@@ -199,6 +210,7 @@ function displayCaptainViceCaptainRecommendations(players) {
               <td>${player.name}</td>
               <td>${player.team}</td>
               <td>${player.position}</td>
+              <td>${player.fantasyPoints}</td>
           `;
         captainTableBody.appendChild(row);
     });
@@ -211,6 +223,7 @@ function displayCaptainViceCaptainRecommendations(players) {
               <td>${player.name}</td>
               <td>${player.team}</td>
               <td>${player.position}</td>
+              <td>${player.fantasyPoints}</td>
           `;
         viceCaptainTableBody.appendChild(row);
     });
